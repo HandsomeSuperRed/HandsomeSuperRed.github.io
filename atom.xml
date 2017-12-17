@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://HandsomeSuperRed.github.io/"/>
-  <updated>2017-09-23T13:34:51.868Z</updated>
+  <updated>2017-12-17T09:02:52.160Z</updated>
   <id>https://HandsomeSuperRed.github.io/</id>
   
   <author>
@@ -17,19 +17,61 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Hello Wifi</title>
-    <link href="https://HandsomeSuperRed.github.io/2017/09/23/hello-wifi/"/>
-    <id>https://HandsomeSuperRed.github.io/2017/09/23/hello-wifi/</id>
-    <published>2017-09-23T13:34:14.275Z</published>
-    <updated>2017-09-23T13:34:51.868Z</updated>
+    <title></title>
+    <link href="https://HandsomeSuperRed.github.io/2017/12/17/Windows%E4%B8%8B%E4%BD%BF%E7%94%A8Github%20Pages+Hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%EF%BC%88%E5%9B%9B%EF%BC%89/"/>
+    <id>https://HandsomeSuperRed.github.io/2017/12/17/Windows下使用Github Pages+Hexo搭建博客（四）/</id>
+    <published>2017-12-17T09:02:52.160Z</published>
+    <updated>2017-12-17T09:02:52.160Z</updated>
     
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>]]></content>
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="https://HandsomeSuperRed.github.io/2017/12/17/Windows%E4%B8%8B%E4%BD%BF%E7%94%A8Github%20Pages+Hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%EF%BC%88%E4%BA%94%EF%BC%89/"/>
+    <id>https://HandsomeSuperRed.github.io/2017/12/17/Windows下使用Github Pages+Hexo搭建博客（五）/</id>
+    <published>2017-12-17T09:02:49.063Z</published>
+    <updated>2017-12-17T09:02:49.063Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="https://HandsomeSuperRed.github.io/2017/12/17/Windows%E4%B8%8B%E4%BD%BF%E7%94%A8Github%20Pages+Hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%EF%BC%88%E4%B8%89%EF%BC%89/"/>
+    <id>https://HandsomeSuperRed.github.io/2017/12/17/Windows下使用Github Pages+Hexo搭建博客（三）/</id>
+    <published>2017-12-17T09:01:34.176Z</published>
+    <updated>2017-12-17T09:01:34.176Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Windows下使用Github Pages+Hexo搭建博客（二）</title>
+    <link href="https://HandsomeSuperRed.github.io/2017/09/23/Windows%E4%B8%8B%E4%BD%BF%E7%94%A8Github%20Pages+Hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%EF%BC%88%E4%BA%8C%EF%BC%89/"/>
+    <id>https://HandsomeSuperRed.github.io/2017/09/23/Windows下使用Github Pages+Hexo搭建博客（二）/</id>
+    <published>2017-09-23T13:34:14.275Z</published>
+    <updated>2017-12-17T09:27:41.985Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="1-安装Node-js"><a href="#1-安装Node-js" class="headerlink" title="1.安装Node.js"></a>1.安装<a href="https://nodejs.org/zh-cn/" target="_blank" rel="external">Node.js</a></h2><p>Node.js官网下载地址：<a href="https://nodejs.org/zh-cn/。" target="_blank" rel="external">https://nodejs.org/zh-cn/。</a></p><p>安装过程没什么可说的，一直点<code>下一步</code>即可。</p><p><code>图一</code><br><img src="http://upload-images.jianshu.io/upload_images/1893386-163d8f49842675a4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p><h2 id="2-安装Git"><a href="#2-安装Git" class="headerlink" title="2.安装Git"></a>2.安装Git</h2><p>Git官网下载地址：<a href="https://git-scm.com/downloads。安装过程没什么可说的，一直点`下一步`即可。就是可能下载过程比较慢。" target="_blank" rel="external">https://git-scm.com/downloads。安装过程没什么可说的，一直点`下一步`即可。就是可能下载过程比较慢。</a></p><p><code>图二</code><br><img src="http://upload-images.jianshu.io/upload_images/1893386-daf3f438994b1ebb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p><h2 id="3-配置SSH"><a href="#3-配置SSH" class="headerlink" title="3.配置SSH"></a>3.配置SSH</h2><p>安装完Git之后，使用SSH将本地git项目与远程的GitHub建立联系。</p><p>安装完Git，如图三所示，打开<code>Git Bush</code>，打开后如图四所示。</p><p><code>图三</code></p><p><img src="http://upload-images.jianshu.io/upload_images/1893386-4b83ab51d10acaa6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p><p>依次输入：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">$ git config --global user.name &quot;Your Username&quot;</div><div class="line"></div><div class="line">$ git config --global user.email &quot;Your Email Address&quot;</div></pre></td></tr></table></figure><p><code>图四</code><br><img src="http://upload-images.jianshu.io/upload_images/1893386-46d31d597455f8eb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p><p><code>Your Username</code>和<code>Your Email Address</code>就是注册GitHub账号时的<code>用户名</code>和<code>邮箱</code>。因为使用仓库前，要通过<code>Username</code>和<code>Email</code>标明自己的身份。</p><p>接下来，继续使用<code>Git Bush</code>。如图五所示，依次输入如下两条命令：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">$ cd ~/.ssh</div><div class="line"></div><div class="line">$ ssh-keygen -t rsa -C &quot;Your Email Address&quot;</div></pre></td></tr></table></figure><p>在输入<code>cd ~/.ssh</code>时，如果提示：<code>No such file or directory</code>， 说明你是第一次使用Git，没有影响。</p><p><code>cd ~/.ssh</code>用来检查本机的ssh密钥，<code>ssh-keygen -t rsa -C &quot;Your Email Address</code>用于生成新的SSH Key。</p><p><code>图五</code><br><img src="http://upload-images.jianshu.io/upload_images/1893386-a2508d165aa5ec1c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p><p>如图五所示，在出现如下提示后，直接回车。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">Generating public/private rsa key pair.</div><div class="line"></div><div class="line">Enter file in which to save the key (/Users/your_user_directory/.ssh/id_rsa):【这里直接回车】</div></pre></td></tr></table></figure><p>如图六所示，会提示输入密码：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">Enter passphrase (empty for no passphrase):【输入加密串】【加密串我们看不见，所以你输密码的时候不要以为没输入进去，你直接输入就好，输完密码按回车键确定就行】</div><div class="line"></div><div class="line">Enter same passphrase again:【再次输入加密串】</div><div class="line"></div><div class="line">如果密码输入不一致，会提示再次输入：</div><div class="line"></div><div class="line">Passphrases do not match.  Try again.</div></pre></td></tr></table></figure><p>这个密码会在你提交项目时使用，如果为空的话提交项目时则不用输入。</p><p>如果出现如图六所示的界面，就说明key生成成功。同时在图六中从<code>Your public key has been saved in /c/Users/User/.ssh/id_rsa.pub.</code>能看到ssh key保存的位置。</p><p><code>图六</code><br><img src="http://upload-images.jianshu.io/upload_images/1893386-773fa8b16e810eba.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p><p>4.添加 SSH Key 到 GitHub<br>登陆Github。<br>依次点击<code>右上角的头像</code>-&gt;<code>Settings</code>-&gt;<code>SSH and GPG keys</code>-&gt;<code>New SSH key</code>，如图七所示。</p><p><code>图七</code><br><img src="http://upload-images.jianshu.io/upload_images/1893386-edc53cf24a7c23fe.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p><p>然后，如图八所示，使用Notepad++打开本地C:\Users\User.ssh\id_rsa.pub文件，也就是刚才生成的SSH key。如果看不到这个文件，需要设置显示隐藏的文件。</p><p>如图九所示，将本地文件里的SSH key全选复制粘贴到刚刚GitHub上通过<code>New SSH key</code>创建的key方框里，<code>Title</code>随便写或者直接空着不写也可以，直接点击<code>Add SHH key</code>就好了。</p><p><code>图八</code><br><img src="http://upload-images.jianshu.io/upload_images/1893386-fca2e506e5a5cddd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p><p><code>图九</code><br><img src="http://upload-images.jianshu.io/upload_images/1893386-738c750366700386.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p><p>如图十所示，仍然打开<code>Git Bash</code>，输入<code>ssh -T git@github.com</code>，测试是否添加成功。</p><p>如果出现如下提示，没关系，直接输入yes即可。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">The authenticity of host &apos;github.com (192.30.255.113)&apos; can&apos;t be established.</div><div class="line"></div><div class="line">RSA key fingerprint is SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.</div><div class="line"></div><div class="line">Are you sure you want to continue connecting (yes/no)?</div></pre></td></tr></table></figure><p>输入yes后会提示输入密码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Enter passphrase for key &apos;/c/Users/User/.ssh/id_rsa&apos;:【这里的密码也是加密串】</div></pre></td></tr></table></figure></p><p><code>图十</code><br><img src="http://upload-images.jianshu.io/upload_images/1893386-c398bfcf967c06f5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p><p>当系统出现如下提示时，说明成功了。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Hi HandsomeSuperRed! You&apos;ve successfully authenticated, but GitHub does not provide shell access.</div></pre></td></tr></table></figure></p><p>不容易啊，终于配好了，写博客真的太麻烦了，截图保存真的累。继续干！</p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+        &lt;h2 id=&quot;1-安装Node-js&quot;&gt;&lt;a href=&quot;#1-安装Node-js&quot; class=&quot;headerlink&quot; title=&quot;1.安装Node.js&quot;&gt;&lt;/a&gt;1.安装&lt;a href=&quot;https://nodejs.org/zh-cn/&quot; target=&quot;_blan
       
     
     </summary>
