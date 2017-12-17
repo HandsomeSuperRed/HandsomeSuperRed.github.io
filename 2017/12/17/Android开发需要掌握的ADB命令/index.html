@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+
+
+  <html class="light page-post">
+
+
+<head>
+  <meta charset="utf-8">
+  
+  <title>Android开发需要掌握的ADB命令 | SuperRed</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="SuperRed,superred,isuperred,Hexo主题,Android开发,Android,TV,Android TV" />
+  
+
+  <meta name="description" content="####$ adb connect your-device-ip-address例如，adb connect 192.168.21.66Android手机开发可以直接通过USB数据线连接电脑和手机，打开手机的开发者模式进行调试。但是Android TV开发如果想实时调试，没有USB怎么办呢？这时候就需要使用ADB命令进行连接。首先，保证你的电脑和要连接的设备（手机、电视）保持在一个网段；那么如">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android开发需要掌握的ADB命令">
+<meta property="og:url" content="https://HandsomeSuperRed.github.io/2017/12/17/Android开发需要掌握的ADB命令/index.html">
+<meta property="og:site_name" content="SuperRed">
+<meta property="og:description" content="####$ adb connect your-device-ip-address例如，adb connect 192.168.21.66Android手机开发可以直接通过USB数据线连接电脑和手机，打开手机的开发者模式进行调试。但是Android TV开发如果想实时调试，没有USB怎么办呢？这时候就需要使用ADB命令进行连接。首先，保证你的电脑和要连接的设备（手机、电视）保持在一个网段；那么如">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1893386-02e6750841d48ba1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2017-12-17T11:49:27.504Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android开发需要掌握的ADB命令">
+<meta name="twitter:description" content="####$ adb connect your-device-ip-address例如，adb connect 192.168.21.66Android手机开发可以直接通过USB数据线连接电脑和手机，打开手机的开发者模式进行调试。但是Android TV开发如果想实时调试，没有USB怎么办呢？这时候就需要使用ADB命令进行连接。首先，保证你的电脑和要连接的设备（手机、电视）保持在一个网段；那么如">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/1893386-02e6750841d48ba1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+
+  
+
+  
+    <link rel="icon" href="/favicon.ico">
+  
+
+  <link href="/css/styles.css?v=c114cbe6" rel="stylesheet">
+
+
+  
+    <link rel="stylesheet" href="/css/personal-style.css">
+  
+
+  
+
+  
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?57e94d016e201fba3603a8a2b0263af0";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+  
+  <script type="text/javascript">
+	(function(){
+	    var bp = document.createElement('script');
+	    var curProtocol = window.location.protocol.split(':')[0];
+	    if (curProtocol === 'https') {
+	        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+	    }
+	    else {
+	        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+	    }
+	    var s = document.getElementsByTagName("script")[0];
+	    s.parentNode.insertBefore(bp, s);
+	})();
+  </script>
+
+
+
+  
+    <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+
+  
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  
+</head>
+
+<body>
+
+
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">盒子</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">盒子</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/archives/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            博客
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/category/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/tag/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            标签
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/link/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            友链
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/about/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/atom.xml"
+            rel="noopener noreferrer"
+            target="_blank"
+            >
+            RSS
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/search/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-Android开发需要掌握的ADB命令" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">Android开发需要掌握的ADB命令</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2017.12.17</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>SuperRed</span>
+        </span>
+      
+
+      
+
+
+      
+        <span>
+          <i class="icon-comment"></i>
+          <a href="https://HandsomeSuperRed.github.io/2017/12/17/Android开发需要掌握的ADB命令/#disqus_thread"></a>
+        </span>
+      
+
+      
+      <i class="fa fa-eye"></i> 
+        <span id="busuanzi_container_page_pv">
+           &nbsp热度 <span id="busuanzi_value_page_pv">
+           <i class="fa fa-spinner fa-spin"></i></span>℃
+        </span>
+      
+
+      
+      
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <p><img src="http://upload-images.jianshu.io/upload_images/1893386-02e6750841d48ba1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Android ADB.png"></p>
+<ul>
+<li>####$ adb connect your-device-ip-address<br>例如，<code>adb connect 192.168.21.66</code><br>Android手机开发可以直接通过USB数据线连接电脑和手机，打开手机的开发者模式进行调试。但是Android TV开发如果想实时调试，没有USB怎么办呢？这时候就需要使用ADB命令进行连接。<br>首先，保证你的电脑和要连接的设备（手机、电视）保持在一个网段；<br>那么如何保持电脑和要连接的设备在一个网段呢？如果要连接的设备是电视的话，可以使用网线和WIFI的形式。如果电脑和电视都连接的是同一个WIFI或者电脑和电视的网线都插在同一个路由的话（当然局域网也是可以的）,那他们就在肯定就在一个网段了。<br>其次，查看一下所要连接的设备（手机、电视  ）的IP；<br>然后，保证adb环境变量配好的情况下，如果你要连接的设备的IP是192.168.21.66，在Android studio的Terminal或者cmd命令行输入<code>adb connect  192.168.21.66</code>就可以连接了。</li>
+<li>####$ adb disconnect  device-ip-address<br>例如，<code>adb disconnect 192.168.21.66</code><br>该命令用于断开与指定IP设备的连接。</li>
+<li><p>####$ adb disconnect<br>如果adb连接了多个设备，该命令用于一次性断开所有连接的设备。</p>
+</li>
+<li><p>####$ adb shell monkey [options] <event-count><br>例如：<code>adb shell monkey -p com.example -v 10000 100</code><br>Monkey是在模拟器或设备上运行的生成用户单击、触摸或手势这样的事件的伪随机流，以及一些系统级事件的程序。通俗点说，就是自动化模拟用户事件。<br>其中：<br>-p：用于指定一个或多个包名。</event-count></p>
+<ul>
+<li>指定一个包： <code>adb shell monkey -p com.htc.Weather 100</code>。说明：com.htc.Weather为包名，100是事件计数（即让Monkey程序模拟100次随机用户事件）。</li>
+<li>指定多个包：<code>adb shell monkey -p com.htc.Weather –p com.htc.pdfreader  -p com.htc.photo.widgets 100</code></li>
+<li>不指定包：<code>adb shell monkey 100</code>。说明：Monkey随机启动APP并发送100个随机事件。</li>
+</ul>
+<p>-v：用于指定反馈信息级别（信息级别就是日志的详细程度），总共分3个级别，分别对应的参数如下表所示：<br>日志级别 Level0<br>示例 <code>adb shellmonkey -p com.htc.Weather –v 100</code><br>说明 缺省值，仅提供启动提示、测试完成和最终结果等少量信息</p>
+</li>
+</ul>
+<ul>
+<li>####$ adb shell<br>进入shell<br>在shell里常用的几个命令：<ul>
+<li>#####$ su<br>获取root权限</li>
+<li>#####$ cd data/data<br>进入data/data目录</li>
+<li>#####$ ll<br>列出目录下的详细信息</li>
+<li>#####$ ls<br>列出目录下的简略信息</li>
+<li>#####$ rm apk名称.apk<br>删除apk</li>
+<li>#####$ exit<br>退出shell</li>
+</ul>
+</li>
+<li>####$ adb uninstall apk包的主包名<br>例如：<code>adb uninstall com.android.myapplication</code><br>卸载App</li>
+<li>####$ adb install -r apk<br>例如：<code>adb install -r I://SystemSettings.apk</code><br>安装App，需要注意的是如果连接了多台设备,则会报错,此时可以添加-s <serialnumber>来处理</serialnumber></li>
+<li>####$ adb shell am start com.android.settings/com.android.settings.Settings<br>打开系统原生Settings.apk</li>
+<li>####$ adb help<br>查看adb的命令</li>
+<li>####$ adb devices<br>查看所有已经连接的设备</li>
+<li>####$adb pull remote local<br>拉取设备上的文件</li>
+<li>####$ adb push local remote<br>推送文件到设备上</li>
+<li>####$ adb kill-server<br>终止adb服务</li>
+<li>####$ adb start-server<br>启动adb服务</li>
+<li>####$ adb shell su -c “chmod 777 /data/data/包名/databases”<br>获取data/data/包名/databases下的权限，有的时候DDMS的data文件夹不能打开就要用到这个命令</li>
+<li>####$ adb shell pm clear 包名<br>清除应用的数据</li>
+<li>####$ adb shell dumpsys activity top<br>查看栈顶Activity,可以用来获取包名</li>
+<li>####$ adb shell dumpsys meminfo<br>内存使用情况</li>
+</ul>
+
+    
+  </div>
+</article>
+
+
+   
+
+   
+  <div class="box-prev-next clearfix">
+    <a class="show pull-left" href="/2017/12/17/Android中颜色透明度百分比和十六进制对应关系/">
+        <i class="icon icon-angle-left"></i>
+    </a>
+    <a class="show pull-right" href="/2017/12/17/Android动画资源（一）——属性动画资源/">
+        <i class="icon icon-angle-right"></i>
+    </a>
+  </div>
+
+
+
+
+</div>
+
+
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/archives/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              博客
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/category/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/tag/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              标签
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/link/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              友链
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/about/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/atom.xml"
+              rel="noopener noreferrer"
+              target="_blank"
+              >
+              RSS
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/search/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              搜索
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+  
+      <div class="fexo-comments comments-post">
+    
+  <section class="disqus-comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+  </section>
+
+  <script>
+    var disqus_shortname = 'iSuperRed';
+    
+    var disqus_url = 'https://HandsomeSuperRed.github.io/2017/12/17/Android开发需要掌握的ADB命令/';
+    
+    (function(){
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+
+  <script id="dsq-count-scr" src="//iSuperRed.disqus.com/count.js" async></script>
+
+
+
+    
+
+
+
+
+    
+
+    
+	
+  </div>
+
+  
+
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235683', function() {
+      // load success
+    });
+  }
+</script>
+
+</body>
+</html>

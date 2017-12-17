@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+
+
+  <html class="light page-post">
+
+
+<head>
+  <meta charset="utf-8">
+  
+  <title>Android动画资源（三）——插值器 | SuperRed</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="SuperRed,superred,isuperred,Hexo主题,Android开发,Android,TV,Android TV" />
+  
+
+  <meta name="description" content="Android动画资源系列文章：Android动画资源文件总结 Interpolators 插值器是一种定义在XML中的动画修饰符，它影响动画的变化率。 插值器有加速、减速、反复、反弹等等动画效果。 插值器通过android:interpolator属性被应用到动画中，插值器使用方式如下：     123&amp;lt;set android:interpolator=&amp;quot;@android:a">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android动画资源（三）——插值器">
+<meta property="og:url" content="https://HandsomeSuperRed.github.io/2017/12/17/Android动画资源（三）——插值器/index.html">
+<meta property="og:site_name" content="SuperRed">
+<meta property="og:description" content="Android动画资源系列文章：Android动画资源文件总结 Interpolators 插值器是一种定义在XML中的动画修饰符，它影响动画的变化率。 插值器有加速、减速、反复、反弹等等动画效果。 插值器通过android:interpolator属性被应用到动画中，插值器使用方式如下：     123&amp;lt;set android:interpolator=&amp;quot;@android:a">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1893386-077e8518730079b3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2017-12-17T11:47:45.803Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android动画资源（三）——插值器">
+<meta name="twitter:description" content="Android动画资源系列文章：Android动画资源文件总结 Interpolators 插值器是一种定义在XML中的动画修饰符，它影响动画的变化率。 插值器有加速、减速、反复、反弹等等动画效果。 插值器通过android:interpolator属性被应用到动画中，插值器使用方式如下：     123&amp;lt;set android:interpolator=&amp;quot;@android:a">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/1893386-077e8518730079b3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+
+  
+
+  
+    <link rel="icon" href="/favicon.ico">
+  
+
+  <link href="/css/styles.css?v=c114cbe6" rel="stylesheet">
+
+
+  
+    <link rel="stylesheet" href="/css/personal-style.css">
+  
+
+  
+
+  
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?57e94d016e201fba3603a8a2b0263af0";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+  
+  <script type="text/javascript">
+	(function(){
+	    var bp = document.createElement('script');
+	    var curProtocol = window.location.protocol.split(':')[0];
+	    if (curProtocol === 'https') {
+	        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+	    }
+	    else {
+	        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+	    }
+	    var s = document.getElementsByTagName("script")[0];
+	    s.parentNode.insertBefore(bp, s);
+	})();
+  </script>
+
+
+
+  
+    <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+
+  
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  
+</head>
+
+<body>
+
+
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">盒子</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">盒子</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/archives/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            博客
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/category/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/tag/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            标签
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/link/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            友链
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/about/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/atom.xml"
+            rel="noopener noreferrer"
+            target="_blank"
+            >
+            RSS
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/search/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Interpolators"><span class="toc-text">Interpolators</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#自定义插值器"><span class="toc-text">自定义插值器</span></a></li></ol></li></ol>
+  </div>
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-Android动画资源（三）——插值器" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">Android动画资源（三）——插值器</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2017.12.17</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>SuperRed</span>
+        </span>
+      
+
+      
+
+
+      
+        <span>
+          <i class="icon-comment"></i>
+          <a href="https://HandsomeSuperRed.github.io/2017/12/17/Android动画资源（三）——插值器/#disqus_thread"></a>
+        </span>
+      
+
+      
+      <i class="fa fa-eye"></i> 
+        <span id="busuanzi_container_page_pv">
+           &nbsp热度 <span id="busuanzi_value_page_pv">
+           <i class="fa fa-spinner fa-spin"></i></span>℃
+        </span>
+      
+
+      
+      
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <p><img src="http://upload-images.jianshu.io/upload_images/1893386-077e8518730079b3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Android animations.png"></p>
+<blockquote>
+<p>Android动画资源系列文章：<a href="http://www.jianshu.com/p/c57199a0fae6" target="_blank" rel="external">Android动画资源文件总结</a></p>
+<h2 id="Interpolators"><a href="#Interpolators" class="headerlink" title="Interpolators"></a>Interpolators</h2><ul>
+<li>插值器是一种定义在XML中的动画修饰符，它影响动画的变化率。</li>
+<li>插值器有加速、减速、反复、反弹等等动画效果。</li>
+<li>插值器通过android:interpolator属性被应用到动画中，插值器使用方式如下：</li>
+</ul>
+</blockquote>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;set android:interpolator=&quot;@android:anim/accelerate_interpolator&quot;&gt;</div><div class="line">  ...</div><div class="line">&lt;/set&gt;</div></pre></td></tr></table></figure>
+<p>Android中提供的所有的插值器都是 Interpolator类的子类，每一个插值器都可以通过android:interpolator属性以资源引用的方式被应用到动画中，下表指定了Android提供的每个插值器和其资源文件引用的对应关系：</p>
+<table>
+<thead>
+<tr>
+<th>插值器类</th>
+<th>资源ID</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://developer.android.com/reference/android/view/animation/AccelerateDecelerateInterpolator.html" target="_blank" rel="external">AccelerateDecelerateInterpolator</a></td>
+<td>@android:anim/accelerate_decelerate_interpolator</td>
+</tr>
+<tr>
+<td><a href="https://developer.android.com/reference/android/view/animation/AccelerateInterpolator.html" target="_blank" rel="external">AccelerateInterpolator</a></td>
+<td>@android:anim/accelerate_interpolator</td>
+</tr>
+<tr>
+<td><a href="https://developer.android.com/reference/android/view/animation/AnticipateInterpolator.html" target="_blank" rel="external">AnticipateInterpolator</a></td>
+<td>@android:anim/anticipate_interpolator</td>
+</tr>
+<tr>
+<td><a href="https://developer.android.com/reference/android/view/animation/AnticipateOvershootInterpolator.html" target="_blank" rel="external">AnticipateOvershootInterpolator</a></td>
+<td>@android:anim/anticipate_overshoot_interpolator</td>
+</tr>
+<tr>
+<td><a href="https://developer.android.com/reference/android/view/animation/BounceInterpolator.html" target="_blank" rel="external">BounceInterpolator</a></td>
+<td>@android:anim/bounce_interpolator</td>
+</tr>
+<tr>
+<td><a href="https://developer.android.com/reference/android/view/animation/CycleInterpolator.html" target="_blank" rel="external">CycleInterpolator</a></td>
+<td>@android:anim/cycle_interpolator</td>
+</tr>
+<tr>
+<td><a href="https://developer.android.com/reference/android/view/animation/DecelerateInterpolator.html" target="_blank" rel="external">DecelerateInterpolator</a></td>
+<td>@android:anim/decelerate_interpolator</td>
+</tr>
+<tr>
+<td><a href="https://developer.android.com/reference/android/view/animation/LinearInterpolator.html" target="_blank" rel="external">LinearInterpolator</a></td>
+<td>@android:anim/linear_interpolator</td>
+</tr>
+<tr>
+<td><a href="https://developer.android.com/reference/android/view/animation/OvershootInterpolator.html" target="_blank" rel="external">OvershootInterpolator</a></td>
+<td>@android:anim/overshoot_interpolator</td>
+</tr>
+</tbody>
+</table>
+<h3 id="自定义插值器"><a href="#自定义插值器" class="headerlink" title="自定义插值器"></a>自定义插值器</h3><ul>
+<li><strong>如果Android平台提供的插值器（列在上表）不能满足实际的需求，可以创建一个自定义插值器。例如，可以调整anticipateinterpolato的加速度，或调整CycleInterpolator的周期数。</strong></li>
+<li><strong>自定义插值器首先需要在XML文件中创建自己的插值器资源。</strong></li>
+<li><strong>文件位置</strong><br>res/anim/filename.xml<br>该文件名将作为资源ID</li>
+<li><strong>资源引用方式</strong><br>In XML: @[package:]anim/filename </li>
+<li><strong>语法</strong><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</div><div class="line">&lt;InterpolatorName xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;</div><div class="line">    android:attribute_name=&quot;value&quot;</div><div class="line">    /&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>如果你没有添加任何新属性，那么你的插值器将与Android平台提供的默认的插值器（在上面的表中已经列出）功能完全相同。</p>
+<ul>
+<li><p><strong>标签</strong></p>
+<ul>
+<li><strong><acceleratedecelerateinterpolator></acceleratedecelerateinterpolator></strong>开始和结束时变化率缓慢，但中间变化率快。</li>
+<li><p><strong><accelerateinterpolator></accelerateinterpolator></strong>开始变化率缓慢，然后加速。<br><strong>属性</strong></p>
+<ul>
+<li>android:factor Float类型. 加速率 (默认是1).<ul>
+<li><strong><anticipateinterpolator></anticipateinterpolator></strong>开始的时候先向后一下然后再向前<br><strong>属性</strong></li>
+</ul>
+</li>
+<li>android:tension Float.  施加张力的量（默认是2）<ul>
+<li><strong><anticipateovershootinterpolator></anticipateovershootinterpolator></strong>开始向后然后向前，最后停在终值。<br><strong>属性</strong></li>
+<li>android:tension Float.施加的张力量（默认是2）</li>
+</ul>
+</li>
+<li>android:extraTension Float.施加的张力的倍数（默认是1.5）<ul>
+<li><strong><bounceinterpolator></bounceinterpolator></strong> 动画最后会反弹。</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><strong><cycleinterpolator></cycleinterpolator></strong>以指定的循环次数重复动画。变化率服从正弦曲线。<br><strong>属性</strong><ul>
+<li>android:cycles Integer. 循环数 (默认是1).</li>
+</ul>
+</li>
+<li><strong><decelerateinterpolator></decelerateinterpolator></strong>开始变化率快，然后减速。<br><strong>属性</strong><ul>
+<li>android:factor Float. 减速率 (默认是1).</li>
+</ul>
+</li>
+<li><strong><linearinterpolator></linearinterpolator></strong> 变化率是恒定的。</li>
+<li><strong><overshootinterpolator></overshootinterpolator></strong>向前一定位置再回来。<br><strong>属性</strong><ul>
+<li>android:tension Float. 施加的张力数（默认是2）</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>举例</strong><br>XML 文件位置：res/anim/my_overshoot_interpolator.xml:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</div><div class="line">&lt;overshootInterpolator xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;</div><div class="line">    android:tension=&quot;7.0&quot;</div><div class="line">    /&gt;</div></pre></td></tr></table></figure>
+<p>XML动画引用自定义插值器如下所示：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;scale xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;</div><div class="line">    android:interpolator=&quot;@anim/my_overshoot_interpolator&quot;</div><div class="line">    android:fromXScale=&quot;1.0&quot;</div><div class="line">    android:toXScale=&quot;3.0&quot;</div><div class="line">    android:fromYScale=&quot;1.0&quot;</div><div class="line">    android:toYScale=&quot;3.0&quot;</div><div class="line">    android:pivotX=&quot;50%&quot;</div><div class="line">    android:pivotY=&quot;50%&quot;</div><div class="line">    android:duration=&quot;700&quot; /&gt;</div></pre></td></tr></table></figure></li>
+</ul>
+
+    
+  </div>
+</article>
+
+
+   
+
+   
+  <div class="box-prev-next clearfix">
+    <a class="show pull-left" href="/2017/12/17/Android动画资源（一）——属性动画资源/">
+        <i class="icon icon-angle-left"></i>
+    </a>
+    <a class="show pull-right" href="/2017/12/17/Android动画资源（二）——补间动画资源/">
+        <i class="icon icon-angle-right"></i>
+    </a>
+  </div>
+
+
+
+
+</div>
+
+
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/archives/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              博客
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/category/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/tag/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              标签
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/link/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              友链
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/about/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/atom.xml"
+              rel="noopener noreferrer"
+              target="_blank"
+              >
+              RSS
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/search/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              搜索
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+  
+      <div class="fexo-comments comments-post">
+    
+  <section class="disqus-comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+  </section>
+
+  <script>
+    var disqus_shortname = 'iSuperRed';
+    
+    var disqus_url = 'https://HandsomeSuperRed.github.io/2017/12/17/Android动画资源（三）——插值器/';
+    
+    (function(){
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+
+  <script id="dsq-count-scr" src="//iSuperRed.disqus.com/count.js" async></script>
+
+
+
+    
+
+
+
+
+    
+
+    
+	
+  </div>
+
+  
+
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235683', function() {
+      // load success
+    });
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+
+
+  <html class="light page-post">
+
+
+<head>
+  <meta charset="utf-8">
+  
+  <title>Android动画资源（二）——补间动画资源 | SuperRed</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="SuperRed,superred,isuperred,Hexo主题,Android开发,Android,TV,Android TV" />
+  
+
+  <meta name="description" content="Android动画资源系列文章：Android动画资源文件总结 Tween animation 用XML定义的动画，在图形上执行诸如旋转、透明度变化、移动和拉伸等转换。 文件位置res/anim/filename.xml该文件名将作为资源ID。 资源引用方式Java中: R.anim.filenameXML中: @[package:]anim/filename 语法12345678910111">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android动画资源（二）——补间动画资源">
+<meta property="og:url" content="https://HandsomeSuperRed.github.io/2017/12/17/Android动画资源（二）——补间动画资源/index.html">
+<meta property="og:site_name" content="SuperRed">
+<meta property="og:description" content="Android动画资源系列文章：Android动画资源文件总结 Tween animation 用XML定义的动画，在图形上执行诸如旋转、透明度变化、移动和拉伸等转换。 文件位置res/anim/filename.xml该文件名将作为资源ID。 资源引用方式Java中: R.anim.filenameXML中: @[package:]anim/filename 语法12345678910111">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1893386-077e8518730079b3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2017-12-17T11:46:59.244Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android动画资源（二）——补间动画资源">
+<meta name="twitter:description" content="Android动画资源系列文章：Android动画资源文件总结 Tween animation 用XML定义的动画，在图形上执行诸如旋转、透明度变化、移动和拉伸等转换。 文件位置res/anim/filename.xml该文件名将作为资源ID。 资源引用方式Java中: R.anim.filenameXML中: @[package:]anim/filename 语法12345678910111">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/1893386-077e8518730079b3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+
+  
+
+  
+    <link rel="icon" href="/favicon.ico">
+  
+
+  <link href="/css/styles.css?v=c114cbe6" rel="stylesheet">
+
+
+  
+    <link rel="stylesheet" href="/css/personal-style.css">
+  
+
+  
+
+  
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?57e94d016e201fba3603a8a2b0263af0";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+  
+  <script type="text/javascript">
+	(function(){
+	    var bp = document.createElement('script');
+	    var curProtocol = window.location.protocol.split(':')[0];
+	    if (curProtocol === 'https') {
+	        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+	    }
+	    else {
+	        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+	    }
+	    var s = document.getElementsByTagName("script")[0];
+	    s.parentNode.insertBefore(bp, s);
+	})();
+  </script>
+
+
+
+  
+    <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+
+  
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  
+</head>
+
+<body>
+
+
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">盒子</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">盒子</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/archives/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            博客
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/category/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/tag/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            标签
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/link/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            友链
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/about/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/atom.xml"
+            rel="noopener noreferrer"
+            target="_blank"
+            >
+            RSS
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/search/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Tween-animation"><span class="toc-text">Tween animation</span></a></li></ol>
+  </div>
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-Android动画资源（二）——补间动画资源" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">Android动画资源（二）——补间动画资源</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2017.12.17</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>SuperRed</span>
+        </span>
+      
+
+      
+
+
+      
+        <span>
+          <i class="icon-comment"></i>
+          <a href="https://HandsomeSuperRed.github.io/2017/12/17/Android动画资源（二）——补间动画资源/#disqus_thread"></a>
+        </span>
+      
+
+      
+      <i class="fa fa-eye"></i> 
+        <span id="busuanzi_container_page_pv">
+           &nbsp热度 <span id="busuanzi_value_page_pv">
+           <i class="fa fa-spinner fa-spin"></i></span>℃
+        </span>
+      
+
+      
+      
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <p><img src="http://upload-images.jianshu.io/upload_images/1893386-077e8518730079b3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Android animations.png"></p>
+<blockquote>
+<p>Android动画资源系列文章：<a href="http://www.jianshu.com/p/c57199a0fae6" target="_blank" rel="external">Android动画资源文件总结</a></p>
+<h2 id="Tween-animation"><a href="#Tween-animation" class="headerlink" title="Tween animation"></a>Tween animation</h2><ul>
+<li><strong>用XML定义的动画，在图形上执行诸如旋转、透明度变化、移动和拉伸等转换。</strong></li>
+<li><strong>文件位置</strong><br>res/anim/filename.xml<br>该文件名将作为资源ID。</li>
+<li><strong>资源引用方式</strong><br>Java中: R.anim.filename<br>XML中: @[package:]anim/filename</li>
+<li><strong>语法</strong><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</div><div class="line">&lt;set xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;</div><div class="line">    android:interpolator=&quot;@[package:]anim/interpolator_resource&quot;</div><div class="line">    android:shareInterpolator=[&quot;true&quot; | &quot;false&quot;] &gt;</div><div class="line">    &lt;alpha</div><div class="line">        android:fromAlpha=&quot;float&quot;</div><div class="line">        android:toAlpha=&quot;float&quot; /&gt;</div><div class="line">    &lt;scale</div><div class="line">        android:fromXScale=&quot;float&quot;</div><div class="line">        android:toXScale=&quot;float&quot;</div><div class="line">        android:fromYScale=&quot;float&quot;</div><div class="line">        android:toYScale=&quot;float&quot;</div><div class="line">        android:pivotX=&quot;float&quot;</div><div class="line">        android:pivotY=&quot;float&quot; /&gt;</div><div class="line">    &lt;translate</div><div class="line">        android:fromXDelta=&quot;float&quot;</div><div class="line">        android:toXDelta=&quot;float&quot;</div><div class="line">        android:fromYDelta=&quot;float&quot;</div><div class="line">        android:toYDelta=&quot;float&quot; /&gt;</div><div class="line">    &lt;rotate</div><div class="line">        android:fromDegrees=&quot;float&quot;</div><div class="line">        android:toDegrees=&quot;float&quot;</div><div class="line">        android:pivotX=&quot;float&quot;</div><div class="line">        android:pivotY=&quot;float&quot; /&gt;</div><div class="line">    &lt;set&gt;</div><div class="line">        ...</div><div class="line">    &lt;/set&gt;</div><div class="line">&lt;/set&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</blockquote>
+<p>补间动画资源文件的根标签只能是<alpha>, <scale>, <translate>, <rotate>或者 <set>中的一个。</set></rotate></translate></scale></alpha></p>
+<p><set>可以包括其他动画元素。</set></p>
+<p><set>内也可以包含<set>元素。</set></set></p>
+<ul>
+<li><p><strong>元素</strong></p>
+<ul>
+<li><strong><set></set></strong><br>能够包含<alpha>, <scale>, <translate>, <rotate>或者其他<set>的容器。 相当于java代码中的AnimationSet。<br><strong>属性</strong><ul>
+<li><strong>android:interpolator</strong><br>插值器， 该值必须是插值器的资源的引用。 可以使用平台默认插值器资源，页可以创建自己的插值器。 </li>
+<li><strong>android:shareInterpolator</strong><br>Boolean类型。如果希望所有子元素都使用同一个插值器，则为“true”。</li>
+</ul>
+</set></rotate></translate></scale></alpha></li>
+<li><strong><alpha></alpha></strong><br>淡入淡出动画。相当于Java代码中的AlphaAnimation.<br><strong>属性</strong><ul>
+<li><strong>android:fromAlpha</strong><br>float类型。透明度的起始值，fromAlpha为0.0代表透明，fromAlpha为1.0代表不透明。</li>
+<li><strong>android:toAlpha</strong><br>float类型。透明度的终止值，fromAlpha为0.0代表透明，fromAlpha为1.0代表不透明。</li>
+</ul>
+</li>
+<li><strong><scale></scale></strong><br>缩放动画： pivotX和pivotY能够指定缩放点。相当于Java代码中的ScaleAnimation。<br><strong>属性</strong><ul>
+<li><strong>android:fromXScale</strong> X方向开始缩放时的值</li>
+<li><strong>android:toXScaleX</strong> 方向结束缩放时的值</li>
+<li><strong>android:fromYScale</strong> Y方向开始缩放时的值</li>
+<li><strong>android:toYScale</strong> Y方向结束缩放时的值</li>
+<li><strong>android:pivotX</strong> X方向的缩放点</li>
+<li><strong>android:pivotY</strong> Y方向的缩放点</li>
+</ul>
+</li>
+<li><strong><translate></translate></strong><br>水平或竖直移动动画。<br><strong>属性值支持以下三种格式：</strong><ul>
+<li>值从-100%到100%，表示相对于自身的百分比；<ul>
+<li>值从-100%p到100%p，表示相对于parent的百分比；</li>
+<li>一个没有后缀的浮点值，表示一个绝对值。相当于Java代码中的translateanimation。<br><strong>属性</strong></li>
+<li><strong>android:fromXDelta</strong> Float or 百分比类型.X方向开始时的偏移量。值为Float类型，表示相对于正常位置的像素值，值为百分比类型且以%结尾，表示相对于控件宽度的百分比；值为百分比类型且以%p结尾，表示相对于父控件的百分比</li>
+<li><strong>android:toXDelta Float</strong>or 百分比类型 X方向结束时的偏移量。 值为Float类型，表示相对于正常位置的像素值，值为百分比类型且以%结尾，表示相对于控件宽度的百分比；值为百分比类型且以%p结尾，表示相对于父控件的百分比</li>
+<li><strong>android:fromYDelta</strong> Float or 百分比类型 Y方向开始时的偏移量。值为Float类型，表示相对于正常位置的像素值，值为百分比类型且以%结尾，表示相对于控件宽度的百分比；值为百分比类型且以%p结尾，表示相对于父控件的百分比</li>
+<li><strong>android:toYDelta</strong> Float or 百分比类型  Y方向结束时的偏移量。值为Float类型，表示相对于正常位置的像素值，值为百分比类型且以%结尾，表示相对于控件宽度的百分比；值为百分比类型且以%p结尾，表示相对于父控件的百分比</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong><rotate></rotate></strong><br>旋转动画。相当于Java代码中的RotateAnimation。</li>
+</ul>
+</li>
+<li><p><strong>举例</strong><br>文件保存位置：res/anim/hyperspace_jump.xml:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">&lt;set xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;</div><div class="line">    android:shareInterpolator=&quot;false&quot;&gt;</div><div class="line">    &lt;scale</div><div class="line">        android:interpolator=&quot;@android:anim/accelerate_decelerate_interpolator&quot;</div><div class="line">        android:fromXScale=&quot;1.0&quot;</div><div class="line">        android:toXScale=&quot;1.4&quot;</div><div class="line">        android:fromYScale=&quot;1.0&quot;</div><div class="line">        android:toYScale=&quot;0.6&quot;</div><div class="line">        android:pivotX=&quot;50%&quot;</div><div class="line">        android:pivotY=&quot;50%&quot;</div><div class="line">        android:fillAfter=&quot;false&quot;</div><div class="line">        android:duration=&quot;700&quot; /&gt;</div><div class="line">    &lt;set</div><div class="line">        android:interpolator=&quot;@android:anim/accelerate_interpolator&quot;</div><div class="line">        android:startOffset=&quot;700&quot;&gt;</div><div class="line">        &lt;scale</div><div class="line">            android:fromXScale=&quot;1.4&quot;</div><div class="line">            android:toXScale=&quot;0.0&quot;</div><div class="line">            android:fromYScale=&quot;0.6&quot;</div><div class="line">            android:toYScale=&quot;0.0&quot;</div><div class="line">            android:pivotX=&quot;50%&quot;</div><div class="line">            android:pivotY=&quot;50%&quot;</div><div class="line">            android:duration=&quot;400&quot; /&gt;</div><div class="line">        &lt;rotate</div><div class="line">            android:fromDegrees=&quot;0&quot;</div><div class="line">            android:toDegrees=&quot;-45&quot;</div><div class="line">            android:toYScale=&quot;0.0&quot;</div><div class="line">            android:pivotX=&quot;50%&quot;</div><div class="line">            android:pivotY=&quot;50%&quot;</div><div class="line">            android:duration=&quot;400&quot; /&gt;</div><div class="line">    &lt;/set&gt;</div><div class="line">&lt;/set&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>下面代码将上面hyperspace_jump.xml动画应用到ImageView上：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">ImageView image = (ImageView) findViewById(R.id.image);</div><div class="line">Animation hyperspaceJump = AnimationUtils.loadAnimation(this, R.anim.hyperspace_jump);</div><div class="line">image.startAnimation(hyperspaceJump);</div></pre></td></tr></table></figure></p>
+
+    
+  </div>
+</article>
+
+
+   
+
+   
+  <div class="box-prev-next clearfix">
+    <a class="show pull-left" href="/2017/12/17/Android动画资源（三）——插值器/">
+        <i class="icon icon-angle-left"></i>
+    </a>
+    <a class="show pull-right" href="/2017/12/17/Android动画资源（四）——帧动画资源/">
+        <i class="icon icon-angle-right"></i>
+    </a>
+  </div>
+
+
+
+
+</div>
+
+
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/archives/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              博客
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/category/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/tag/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              标签
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/link/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              友链
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/about/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/atom.xml"
+              rel="noopener noreferrer"
+              target="_blank"
+              >
+              RSS
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/search/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              搜索
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+  
+      <div class="fexo-comments comments-post">
+    
+  <section class="disqus-comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+  </section>
+
+  <script>
+    var disqus_shortname = 'iSuperRed';
+    
+    var disqus_url = 'https://HandsomeSuperRed.github.io/2017/12/17/Android动画资源（二）——补间动画资源/';
+    
+    (function(){
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+
+  <script id="dsq-count-scr" src="//iSuperRed.disqus.com/count.js" async></script>
+
+
+
+    
+
+
+
+
+    
+
+    
+	
+  </div>
+
+  
+
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235683', function() {
+      // load success
+    });
+  }
+</script>
+
+</body>
+</html>

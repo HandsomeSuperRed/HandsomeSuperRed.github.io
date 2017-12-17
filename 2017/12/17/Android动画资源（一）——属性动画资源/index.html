@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+
+
+  <html class="light page-post">
+
+
+<head>
+  <meta charset="utf-8">
+  
+  <title>Android动画资源（一）——属性动画资源 | SuperRed</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="SuperRed,superred,isuperred,Hexo主题,Android开发,Android,TV,Android TV" />
+  
+
+  <meta name="description" content="Android动画资源系列文章：Android动画资源文件总结 Property Animation 在XML中定义的一种动画，它修改目标对象的属性，例如背景颜色或透明度值。 文件位置res/animator/filename.xml该文件名将作为资源ID。 资源引用方式Java中：R.animator.filenameXML中： @[package:]animator/filename 语法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android动画资源（一）——属性动画资源">
+<meta property="og:url" content="https://HandsomeSuperRed.github.io/2017/12/17/Android动画资源（一）——属性动画资源/index.html">
+<meta property="og:site_name" content="SuperRed">
+<meta property="og:description" content="Android动画资源系列文章：Android动画资源文件总结 Property Animation 在XML中定义的一种动画，它修改目标对象的属性，例如背景颜色或透明度值。 文件位置res/animator/filename.xml该文件名将作为资源ID。 资源引用方式Java中：R.animator.filenameXML中： @[package:]animator/filename 语法">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1893386-077e8518730079b3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2017-12-17T11:46:25.842Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android动画资源（一）——属性动画资源">
+<meta name="twitter:description" content="Android动画资源系列文章：Android动画资源文件总结 Property Animation 在XML中定义的一种动画，它修改目标对象的属性，例如背景颜色或透明度值。 文件位置res/animator/filename.xml该文件名将作为资源ID。 资源引用方式Java中：R.animator.filenameXML中： @[package:]animator/filename 语法">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/1893386-077e8518730079b3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+
+  
+
+  
+    <link rel="icon" href="/favicon.ico">
+  
+
+  <link href="/css/styles.css?v=c114cbe6" rel="stylesheet">
+
+
+  
+    <link rel="stylesheet" href="/css/personal-style.css">
+  
+
+  
+
+  
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?57e94d016e201fba3603a8a2b0263af0";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+  
+  <script type="text/javascript">
+	(function(){
+	    var bp = document.createElement('script');
+	    var curProtocol = window.location.protocol.split(':')[0];
+	    if (curProtocol === 'https') {
+	        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+	    }
+	    else {
+	        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+	    }
+	    var s = document.getElementsByTagName("script")[0];
+	    s.parentNode.insertBefore(bp, s);
+	})();
+  </script>
+
+
+
+  
+    <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+
+  
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  
+</head>
+
+<body>
+
+
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">盒子</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">盒子</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/archives/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            博客
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/category/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/tag/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            标签
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/link/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            友链
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/about/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/atom.xml"
+            rel="noopener noreferrer"
+            target="_blank"
+            >
+            RSS
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/search/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Property-Animation"><span class="toc-text">Property Animation</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#"><span class="toc-text"></span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#-1"><span class="toc-text"></span></a></li></ol></li></ol></li></ol>
+  </div>
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-Android动画资源（一）——属性动画资源" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">Android动画资源（一）——属性动画资源</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2017.12.17</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>SuperRed</span>
+        </span>
+      
+
+      
+
+
+      
+        <span>
+          <i class="icon-comment"></i>
+          <a href="https://HandsomeSuperRed.github.io/2017/12/17/Android动画资源（一）——属性动画资源/#disqus_thread"></a>
+        </span>
+      
+
+      
+      <i class="fa fa-eye"></i> 
+        <span id="busuanzi_container_page_pv">
+           &nbsp热度 <span id="busuanzi_value_page_pv">
+           <i class="fa fa-spinner fa-spin"></i></span>℃
+        </span>
+      
+
+      
+      
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <p><img src="http://upload-images.jianshu.io/upload_images/1893386-077e8518730079b3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Android animations.png"></p>
+<blockquote>
+<p>Android动画资源系列文章：<a href="http://www.jianshu.com/p/c57199a0fae6" target="_blank" rel="external">Android动画资源文件总结</a></p>
+<h2 id="Property-Animation"><a href="#Property-Animation" class="headerlink" title="Property Animation"></a>Property Animation</h2><ul>
+<li><strong>在XML中定义的一种动画，它修改目标对象的属性，例如背景颜色或透明度值。</strong></li>
+<li><strong>文件位置</strong><br>res/animator/filename.xml<br>该文件名将作为资源ID。</li>
+<li><strong>资源引用方式</strong><br>Java中：R.animator.filename<br>XML中： @[package:]animator/filename</li>
+<li><strong>语法</strong><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">&lt;set</div><div class="line">  android:ordering=[&quot;together&quot; | &quot;sequentially&quot;]&gt;</div><div class="line"></div><div class="line">    &lt;objectAnimator</div><div class="line">        android:propertyName=&quot;string&quot;</div><div class="line">        android:duration=&quot;int&quot;</div><div class="line">        android:valueFrom=&quot;float | int | color&quot;</div><div class="line">        android:valueTo=&quot;float | int | color&quot;</div><div class="line">        android:startOffset=&quot;int&quot;</div><div class="line">        android:repeatCount=&quot;int&quot;</div><div class="line">        android:repeatMode=[&quot;repeat&quot; | &quot;reverse&quot;]</div><div class="line">        android:valueType=[&quot;intType&quot; | &quot;floatType&quot;]/&gt;</div><div class="line"></div><div class="line">    &lt;animator</div><div class="line">        android:duration=&quot;int&quot;</div><div class="line">        android:valueFrom=&quot;float | int | color&quot;</div><div class="line">        android:valueTo=&quot;float | int | color&quot;</div><div class="line">        android:startOffset=&quot;int&quot;</div><div class="line">        android:repeatCount=&quot;int&quot;</div><div class="line">        android:repeatMode=[&quot;repeat&quot; | &quot;reverse&quot;]</div><div class="line">        android:valueType=[&quot;intType&quot; | &quot;floatType&quot;]/&gt;</div><div class="line"></div><div class="line">    &lt;set&gt;</div><div class="line">        ...</div><div class="line">    &lt;/set&gt;</div><div class="line">&lt;/set&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</blockquote>
+<ul>
+<li><strong>注意</strong><ul>
+<li>属性动画资源文件只能有一个根标签，而且只能是<set>，&lt; objectanimator &gt;或&lt; ValueAnimator &gt;中的一<br>个。</set></li>
+<li><set>可以将多个动画标签组合起来，同时<set>标签内也可以嵌套<set>标签。</set></set></set></li>
+</ul>
+</li>
+</ul>
+<p>####<set></set></p>
+<ul>
+<li><strong>一个能够包裹其它元素（<objectanimator>, <valueanimator>或者其它 <set>）的容器。相当于Java代码中的AnimatorSet。</set></valueanimator></objectanimator></strong></li>
+<li><strong>每一个<set> 都可以通过ordering属性定义自己动画的执行顺序。</set></strong></li>
+<li><p><strong>属性</strong><br>android:ordering  指定动画的播放顺序</p>
+<p>| 属性值 | 描述 |<br>| ————- |————-|<br>| sequentially | 动画顺序执行 |<br>| together (默认值) | 动画一起执行 |</p>
+</li>
+</ul>
+<h4 id=""><a href="#" class="headerlink" title=""></a><objectanimator></objectanimator></h4><ul>
+<li><strong>在一段特定的时间内改变对象的特定属性。相当于Java代码中的ObjectAnimator。</strong></li>
+<li><p><strong>属性</strong></p>
+<ul>
+<li><strong>android:propertyName</strong><br>属性值类型：String。<br>属性名，例如：可以是alpha或者backgroundColor等等。</li>
+<li><strong>android:valueTo</strong><br>属性值类型：float，int，或者color。<br>动画结束的属性值，可以使float，int或者color，如果是color类型，应该由六位十六进制数(例如, #333333)表示。</li>
+<li><strong>android:valueFrom</strong><br>属性值类型： float，int，或者color。<br>动画开始的属性值</li>
+<li><strong>android:duration</strong><br>属性值类型：int。<br>动画持续的时间，单位毫秒，默认值为300毫秒。</li>
+<li><strong>android:startOffset</strong><br>属性值类型：int。<br>调用 start()方法以后延时的毫秒数。</li>
+<li><strong>android:repeatCount</strong><br>属性值类型：int。<br>动画重复执行的次数。repeatCount 可以设置为正整数或者-1。repeatCount 设置为-1代表动画无    限循环；repeatCount 设置为一个正整数，例如1，代表在动画运行完成以后再重复运行一次，也就是总共运行两次。repeatCount 默认值是0，代表不重复执行动画。</li>
+<li><strong>android:repeatMode</strong><br>属性值类型：int。<br>动画在动画结束时的表现方式。repeatcount必须设置为正整数或“-1”repeatMode这个属性才有效。repeatMode设置为“reverse”为倒序重复执行动画，repeatMode设置为“repeat”为正序重复执行动画。</li>
+<li><p><strong>android:valueType</strong><br>动画值类型。如果值为颜色，则不指定此属性，动画框架自动处理颜色值。valueType属性有intType和floatType 两种属性值。</p>
+<p>| 属性值 | 描述 |<br>| ————- |————-|<br>| intType| 指定动画值为int类型 |<br>| floatType (默认值) | 指定动画值为float类型 | </p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="-1"><a href="#-1" class="headerlink" title=""></a><animator></animator></h4><ul>
+<li><strong>在指定的时间段执行动画。相当于Java代码中的ValueAnimator。</strong></li>
+<li><p><strong>属性</strong></p>
+<ul>
+<li>android:valueTo<br>属性值类型：float,int或者color。<br>动画结束的属性值，如果是color类型，应该由六位十六进制数(例如：#333333)表示。</li>
+<li>android:valueFrom<br>属性值类型：float,int或者color<br>动画开始的属性值。</li>
+<li>android:duration<br>  属性值类型：int。<br>动画持续的时间，单位毫秒，默认值为300毫秒。</li>
+<li>android:startOffset<br>属性值类型：int类型<br>调用 start()方法以后延时的毫秒数。</li>
+<li>android:repeatCount<br>属性值类型：int类型<br>动画重复执行的次数。repeatCount 可以设置为正整数或者-1。repeatCount 设置为-1代表动画无限循环；repeatCount 设置为一个正整数，例如1，代表在动画运行完成以后再重复运行一次，也就是总共运行两次。repeatCount 默认值是0，代表不重复执行动画。</li>
+<li>android:repeatMode<br>属性值类型：int类型。<br>动画在动画结束时的表现方式。repeatcount必须设置为正整数或“-1”repeatMode这个属性才有效。repeatMode设置为“reverse”为倒序重复执行动画，repeatMode设置为“repeat”为正序重复执行动画。</li>
+<li><p>android:valueType<br>如果值为颜色，则不指定此属性，动画框架自动处理颜色值。</p>
+<p>| 属性值 | 描述 |<br>| ————- |————-|<br>| intType| 指定动画值为int类型 |<br>| floatType (默认值) | 指定动画值为float类型 |</p>
+</li>
+</ul>
+</li>
+<li><p><strong>举例</strong><br>XML 文件位置：res/animator/property_animator.xml:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">&lt;set android:ordering=&quot;sequentially&quot;&gt;</div><div class="line">    &lt;set&gt;</div><div class="line">        &lt;objectAnimator</div><div class="line">            android:propertyName=&quot;x&quot;</div><div class="line">            android:duration=&quot;500&quot;</div><div class="line">            android:valueTo=&quot;400&quot;</div><div class="line">            android:valueType=&quot;intType&quot;/&gt;</div><div class="line">        &lt;objectAnimator</div><div class="line">            android:propertyName=&quot;y&quot;</div><div class="line">            android:duration=&quot;500&quot;</div><div class="line">            android:valueTo=&quot;300&quot;</div><div class="line">            android:valueType=&quot;intType&quot;/&gt;</div><div class="line">    &lt;/set&gt;</div><div class="line">    &lt;objectAnimator</div><div class="line">        android:propertyName=&quot;alpha&quot;</div><div class="line">        android:duration=&quot;500&quot;</div><div class="line">        android:valueTo=&quot;1f&quot;/&gt;</div><div class="line">&lt;/set&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>下面代码将实现上面property_animator动画的调用。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">AnimatorSet set = (AnimatorSet) AnimatorInflater.loadAnimator(myContext,</div><div class="line">    R.anim.property_animator);</div><div class="line">set.setTarget(myObject);</div><div class="line">set.start();</div></pre></td></tr></table></figure></p>
+<p>注意：调用setTarget()方法为AnimatorSet的所有子项设置单个目标对象，也就是setTarget()设置的目标对象才执行动画。</p>
+
+    
+  </div>
+</article>
+
+
+   
+
+   
+  <div class="box-prev-next clearfix">
+    <a class="show pull-left" href="/2017/12/17/Android开发需要掌握的ADB命令/">
+        <i class="icon icon-angle-left"></i>
+    </a>
+    <a class="show pull-right" href="/2017/12/17/Android动画资源（三）——插值器/">
+        <i class="icon icon-angle-right"></i>
+    </a>
+  </div>
+
+
+
+
+</div>
+
+
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/archives/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              博客
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/category/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/tag/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              标签
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/link/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              友链
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/about/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/atom.xml"
+              rel="noopener noreferrer"
+              target="_blank"
+              >
+              RSS
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/search/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              搜索
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+  
+      <div class="fexo-comments comments-post">
+    
+  <section class="disqus-comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+  </section>
+
+  <script>
+    var disqus_shortname = 'iSuperRed';
+    
+    var disqus_url = 'https://HandsomeSuperRed.github.io/2017/12/17/Android动画资源（一）——属性动画资源/';
+    
+    (function(){
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+
+  <script id="dsq-count-scr" src="//iSuperRed.disqus.com/count.js" async></script>
+
+
+
+    
+
+
+
+
+    
+
+    
+	
+  </div>
+
+  
+
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235683', function() {
+      // load success
+    });
+  }
+</script>
+
+</body>
+</html>
