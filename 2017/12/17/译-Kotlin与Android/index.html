@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+
+
+  <html class="light page-post">
+
+
+<head>
+  <meta charset="utf-8">
+  
+  <title>译-Kotlin与Android | SuperRed</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="SuperRed,superred,isuperred,Hexo主题,Android开发,Android,TV,Android TV" />
+  
+
+  <meta name="description" content="学习Google官方文档的同时记录一下自己的翻译过程，以便后续再学习。不当之处，请批评指正！附原文：https://developer.android.com/kotlin/index.html?hl=zh-cn。 一、Kotlin and Android Kotlin is now an official language on Android. It’s expressive, concise">
+<meta property="og:type" content="article">
+<meta property="og:title" content="译-Kotlin与Android">
+<meta property="og:url" content="https://HandsomeSuperRed.github.io/2017/12/17/译-Kotlin与Android/index.html">
+<meta property="og:site_name" content="SuperRed">
+<meta property="og:description" content="学习Google官方文档的同时记录一下自己的翻译过程，以便后续再学习。不当之处，请批评指正！附原文：https://developer.android.com/kotlin/index.html?hl=zh-cn。 一、Kotlin and Android Kotlin is now an official language on Android. It’s expressive, concise">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1893386-3bbd2b391acf7bef.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1893386-f2e89a3fee0ab5a3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1893386-f4af172190432ec2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2017-12-17T12:09:50.466Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="译-Kotlin与Android">
+<meta name="twitter:description" content="学习Google官方文档的同时记录一下自己的翻译过程，以便后续再学习。不当之处，请批评指正！附原文：https://developer.android.com/kotlin/index.html?hl=zh-cn。 一、Kotlin and Android Kotlin is now an official language on Android. It’s expressive, concise">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/1893386-3bbd2b391acf7bef.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+
+  
+
+  
+    <link rel="icon" href="/favicon.ico">
+  
+
+  <link href="/css/styles.css?v=c114cbe6" rel="stylesheet">
+
+
+  
+    <link rel="stylesheet" href="/css/personal-style.css">
+  
+
+  
+
+  
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?57e94d016e201fba3603a8a2b0263af0";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+  
+  <script type="text/javascript">
+	(function(){
+	    var bp = document.createElement('script');
+	    var curProtocol = window.location.protocol.split(':')[0];
+	    if (curProtocol === 'https') {
+	        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+	    }
+	    else {
+	        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+	    }
+	    var s = document.getElementsByTagName("script")[0];
+	    s.parentNode.insertBefore(bp, s);
+	})();
+  </script>
+
+
+
+  
+    <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+
+  
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  
+</head>
+
+<body>
+
+
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">盒子</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">盒子</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/archives/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            博客
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/category/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/tag/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            标签
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/link/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            友链
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/about/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/atom.xml"
+            rel="noopener noreferrer"
+            target="_blank"
+            >
+            RSS
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/search/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一、Kotlin-and-Android"><span class="toc-text">一、Kotlin and Android</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二、Modern-Expressive-Safe"><span class="toc-text">二、Modern. Expressive. Safe.</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三、Great-Tooling-Support"><span class="toc-text">三、Great Tooling Support</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#四、Kotlin-is-Open"><span class="toc-text">四、Kotlin is Open</span></a></li></ol>
+  </div>
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-译-Kotlin与Android" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">译-Kotlin与Android</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2017.12.17</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>SuperRed</span>
+        </span>
+      
+
+      
+
+
+      
+        <span>
+          <i class="icon-comment"></i>
+          <a href="https://HandsomeSuperRed.github.io/2017/12/17/译-Kotlin与Android/#disqus_thread"></a>
+        </span>
+      
+
+      
+      <i class="fa fa-eye"></i> 
+        <span id="busuanzi_container_page_pv">
+           &nbsp热度 <span id="busuanzi_value_page_pv">
+           <i class="fa fa-spinner fa-spin"></i></span>℃
+        </span>
+      
+
+      
+      
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <p><img src="http://upload-images.jianshu.io/upload_images/1893386-3bbd2b391acf7bef.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Android-and-Kotlin.png"><br>学习Google官方文档的同时记录一下自己的翻译过程，以便后续再学习。不当之处，请批评指正！附原文：<a href="https://developer.android.com/kotlin/index.html?hl=zh-cn。" target="_blank" rel="external">https://developer.android.com/kotlin/index.html?hl=zh-cn。</a></p>
+<h1 id="一、Kotlin-and-Android"><a href="#一、Kotlin-and-Android" class="headerlink" title="一、Kotlin and Android"></a>一、Kotlin and Android</h1><blockquote>
+<p>Kotlin is now an official language on Android. It’s expressive, concise, and powerful. Best of all, it’s interoperable with our existing Android languages and runtime.<br>Kotlin 现在是开发Android的官方语言，它表现力强、简洁、有力。最重要的是，它兼容现在的Android语言和运行时。</p>
+<h1 id="二、Modern-Expressive-Safe"><a href="#二、Modern-Expressive-Safe" class="headerlink" title="二、Modern. Expressive. Safe."></a>二、Modern. Expressive. Safe.</h1><p>Kotlin is concise while being expressive. It contains safety features for nullability and immutability, to make your Android apps healthy and performant by default.<br>Kotlin简洁而富有表现力。它包含可空性和不变性这样的安全特性，以使您的Android应用程序在默认情况下保持健壮性和高性能。</p>
+<p>###1. 更安全的代码</p>
+<ul>
+<li>写更安全的代码，避免App内空指针异常。<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">//Kotlin</div><div class="line">var output: String</div><div class="line">output = null   // Compilation error</div><div class="line"></div><div class="line">==================================</div><div class="line"></div><div class="line">val name: String? = null    // Nullable type</div><div class="line">println(name.length())      // Compilation error</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</blockquote>
+<p>###2. 可读性和简洁性</p>
+<ul>
+<li><p>数据类<br>专注于表达你的想法，写更少的样板代码。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">//Kotlin</div><div class="line">// Create a POJO with getters, setters, equals(), hashCode(), toString(), and copy() </div><div class="line">// with a single line:</div><div class="line"></div><div class="line">data class User(val name: String, val email: String)</div></pre></td></tr></table></figure>
+</li>
+<li><p>Lambdas<br>使用Lambdas简化代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">//Java</div><div class="line">button.setOnClickListener(new View.OnClickListener()&#123;</div><div class="line">    @Override</div><div class="line">    public void onClick(View v)&#123;</div><div class="line">        doSomething();</div><div class="line">    &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">//Kotlin</div><div class="line">button.setOnClickListener &#123; doSomething() &#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>默认的和命名的参数<br>通过使用默认的参数减少重载方法的数量。调用方法时使用命名的参数提高代码可读性。<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">//Kotlin</div><div class="line">fun format(str: String,</div><div class="line">           normalizeCase: Boolean = true,</div><div class="line">           upperCaseFirstLetter: Boolean = true,</div><div class="line">           divideByCamelHumps: Boolean = false,</div><div class="line">           wordSeparator: Char = &apos; &apos;) &#123;</div><div class="line">        …</div><div class="line">    &#125;</div><div class="line"></div><div class="line">==================================</div><div class="line"></div><div class="line">// Call function with named arguments.</div><div class="line">format(str, normalizeCase = true, upperCaseFirstLetter = true)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>###3. 不再需要findViewById<br>代码中可以不再使用findViewById()， 代码更简洁。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">//Kotlin</div><div class="line">import kotlinx.android.synthetic.main.content_main.*</div><div class="line"></div><div class="line">class MainActivity : AppCompatActivity() &#123;</div><div class="line"></div><div class="line">    override fun onCreate(savedInstanceState: Bundle?) &#123;</div><div class="line">        super.onCreate(savedInstanceState)</div><div class="line">        setContentView(R.layout.activity_main)</div><div class="line">        // No need to call findViewById(R.id.textView) as TextView</div><div class="line">        textView.text = &quot;Kotlin for Android rocks!&quot;</div><div class="line"></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>###4. 扩展功能，却不需用继承<br>扩展函数和属性让您轻松扩展类的功能而不用继承它们。提高代码可读性和自然性。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">// Extend ViewGroup class with inflate function</div><div class="line">fun ViewGroup.inflate(layoutRes: Int): View &#123;</div><div class="line">    return LayoutInflater.from(context).inflate(layoutRes, this, false)</div><div class="line">&#125;</div><div class="line"></div><div class="line">==================================</div><div class="line">//Kotlin</div><div class="line">// Call inflate directly on the ViewGroup instance</div><div class="line">override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder &#123;</div><div class="line">    val v = parent.inflate(R.layout.view_item)</div><div class="line">    return ViewHolder(v)</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>###5. 100%兼容Java<br>Kotlin是一种JVM语言，可以与Java完全互操作。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">//Kotlin</div><div class="line">// Calling Java code from Kotlin</div><div class="line">class KotlinClass &#123;</div><div class="line">    fun kotlinDoSomething() &#123;</div><div class="line">        val javaClass = JavaClass()</div><div class="line">        javaClass.javaDoSomething()</div><div class="line">        println(JavaClass().prop)</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">==================================</div><div class="line"></div><div class="line">// Calling Kotlin code from Java</div><div class="line">public class JavaClass &#123;</div><div class="line">    public String getProp() &#123; return &quot;Hello&quot;; &#125;</div><div class="line">    public void javaDoSomething() &#123;</div><div class="line">        new KotlinClass().kotlinDoSomething();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h1 id="三、Great-Tooling-Support"><a href="#三、Great-Tooling-Support" class="headerlink" title="三、Great Tooling Support"></a>三、Great Tooling Support</h1><blockquote>
+<p>Android Studio 3.0 provides helpful tools to help you start using Kotlin. Convert entire Java files or convert code snippets on the fly when you paste Java code into a Kotlin file.<br>Android Studio 3.0提供了有用的工具来帮助您开始使用Kotlin。 将Java代码粘贴到Kotlin文件中时，可以随时转换整个Java文件或转换代码片段。</p>
+</blockquote>
+<p><img src="http://upload-images.jianshu.io/upload_images/1893386-f2e89a3fee0ab5a3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="kotlin-convert.png"></p>
+<h1 id="四、Kotlin-is-Open"><a href="#四、Kotlin-is-Open" class="headerlink" title="四、Kotlin is Open"></a>四、Kotlin is Open</h1><blockquote>
+<p>Just like Android, Kotlin is an open source project under Apache 2.0. Our choice of Kotlin reaffirms our commitment to an open developer ecosystem as we evolve and grow the Android platform, and we are excited to see the language evolve.<br>Android和Kotlin都是Apache 2.0下的一个开源项目。 我们(Google)对Kotlin的选择再次肯定了我们(Google)在开发和发展Android平台的过程中对开放式开发者生态系统的承诺，我们(Google)很高兴看到这门语言的发展。</p>
+</blockquote>
+<p><img src="http://upload-images.jianshu.io/upload_images/1893386-f4af172190432ec2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="![android-and-kotlin.png](http://upload-images.jianshu.io/upload_images/1893386-00087feebb392521.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+"></p>
+
+    
+  </div>
+</article>
+
+
+   
+
+   
+  <div class="box-prev-next clearfix">
+    <a class="show pull-left" href="/2017/12/17/Android动画资源文件总结/">
+        <i class="icon icon-angle-left"></i>
+    </a>
+    <a class="hide pull-right" href="/">
+        <i class="icon icon-angle-right"></i>
+    </a>
+  </div>
+
+
+
+
+</div>
+
+
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/archives/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              博客
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/category/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/tag/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              标签
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/link/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              友链
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/about/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/atom.xml"
+              rel="noopener noreferrer"
+              target="_blank"
+              >
+              RSS
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/search/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              搜索
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+  
+      <div class="fexo-comments comments-post">
+    
+  <section class="disqus-comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+  </section>
+
+  <script>
+    var disqus_shortname = 'iSuperRed';
+    
+    var disqus_url = 'https://HandsomeSuperRed.github.io/2017/12/17/译-Kotlin与Android/';
+    
+    (function(){
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+
+  <script id="dsq-count-scr" src="//iSuperRed.disqus.com/count.js" async></script>
+
+
+
+    
+
+
+
+
+    
+
+    
+	
+  </div>
+
+  
+
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235683', function() {
+      // load success
+    });
+  }
+</script>
+
+</body>
+</html>
