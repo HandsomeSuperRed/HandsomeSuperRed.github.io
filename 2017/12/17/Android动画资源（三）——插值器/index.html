@@ -15,17 +15,17 @@
     <meta name="keywords" content="SuperRed,superred,isuperred,Hexo主题,Android开发,Android,TV,Android TV" />
   
 
-  <meta name="description" content="Android动画资源系列文章：Android动画资源文件总结 Interpolators 插值器是一种定义在XML中的动画修饰符，它影响动画的变化率。 插值器有加速、减速、反复、反弹等等动画效果。 插值器通过android:interpolator属性被应用到动画中，插值器使用方式如下：     123&amp;lt;set android:interpolator=&amp;quot;@android:a">
+  <meta name="description" content="Android动画资源系列文章：Android动画资源文件总结 1.Interpolators 插值器是一种定义在XML中的动画修饰符，它影响动画的变化率。 插值器有加速、减速、反复、反弹等等动画效果。 插值器通过 android:interpolator 属性被应用到动画中，插值器使用方式如下： 123&amp;lt;set android:interpolator=&amp;quot;@android:ani">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android动画资源（三）——插值器">
 <meta property="og:url" content="https://HandsomeSuperRed.github.io/2017/12/17/Android动画资源（三）——插值器/index.html">
 <meta property="og:site_name" content="SuperRed">
-<meta property="og:description" content="Android动画资源系列文章：Android动画资源文件总结 Interpolators 插值器是一种定义在XML中的动画修饰符，它影响动画的变化率。 插值器有加速、减速、反复、反弹等等动画效果。 插值器通过android:interpolator属性被应用到动画中，插值器使用方式如下：     123&amp;lt;set android:interpolator=&amp;quot;@android:a">
+<meta property="og:description" content="Android动画资源系列文章：Android动画资源文件总结 1.Interpolators 插值器是一种定义在XML中的动画修饰符，它影响动画的变化率。 插值器有加速、减速、反复、反弹等等动画效果。 插值器通过 android:interpolator 属性被应用到动画中，插值器使用方式如下： 123&amp;lt;set android:interpolator=&amp;quot;@android:ani">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1893386-077e8518730079b3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2017-12-17T11:47:45.803Z">
+<meta property="og:updated_time" content="2017-12-17T12:53:03.203Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android动画资源（三）——插值器">
-<meta name="twitter:description" content="Android动画资源系列文章：Android动画资源文件总结 Interpolators 插值器是一种定义在XML中的动画修饰符，它影响动画的变化率。 插值器有加速、减速、反复、反弹等等动画效果。 插值器通过android:interpolator属性被应用到动画中，插值器使用方式如下：     123&amp;lt;set android:interpolator=&amp;quot;@android:a">
+<meta name="twitter:description" content="Android动画资源系列文章：Android动画资源文件总结 1.Interpolators 插值器是一种定义在XML中的动画修饰符，它影响动画的变化率。 插值器有加速、减速、反复、反弹等等动画效果。 插值器通过 android:interpolator 属性被应用到动画中，插值器使用方式如下： 123&amp;lt;set android:interpolator=&amp;quot;@android:ani">
 <meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/1893386-077e8518730079b3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
   
@@ -185,7 +185,7 @@
 
   <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Interpolators"><span class="toc-text">Interpolators</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#自定义插值器"><span class="toc-text">自定义插值器</span></a></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Interpolators"><span class="toc-text">1.Interpolators</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-自定义插值器"><span class="toc-text">2.自定义插值器</span></a></li></ol>
   </div>
 
 
@@ -233,17 +233,15 @@
 
   <div class="article-content">
     
-      <p><img src="http://upload-images.jianshu.io/upload_images/1893386-077e8518730079b3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Android animations.png"></p>
-<blockquote>
-<p>Android动画资源系列文章：<a href="http://www.jianshu.com/p/c57199a0fae6" target="_blank" rel="external">Android动画资源文件总结</a></p>
-<h2 id="Interpolators"><a href="#Interpolators" class="headerlink" title="Interpolators"></a>Interpolators</h2><ul>
+      <p><img src="http://upload-images.jianshu.io/upload_images/1893386-077e8518730079b3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Android animations.png"><br>Android动画资源系列文章：<a href="http://www.jianshu.com/p/c57199a0fae6" target="_blank" rel="external">Android动画资源文件总结</a></p>
+<h2 id="1-Interpolators"><a href="#1-Interpolators" class="headerlink" title="1.Interpolators"></a>1.Interpolators</h2><ul>
 <li>插值器是一种定义在XML中的动画修饰符，它影响动画的变化率。</li>
 <li>插值器有加速、减速、反复、反弹等等动画效果。</li>
-<li>插值器通过android:interpolator属性被应用到动画中，插值器使用方式如下：</li>
+<li><p>插值器通过 <code>android:interpolator</code> 属性被应用到动画中，插值器使用方式如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;set android:interpolator=&quot;@android:anim/accelerate_interpolator&quot;&gt;</div><div class="line">  ...</div><div class="line">&lt;/set&gt;</div></pre></td></tr></table></figure>
+</li>
 </ul>
-</blockquote>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;set android:interpolator=&quot;@android:anim/accelerate_interpolator&quot;&gt;</div><div class="line">  ...</div><div class="line">&lt;/set&gt;</div></pre></td></tr></table></figure>
-<p>Android中提供的所有的插值器都是 Interpolator类的子类，每一个插值器都可以通过android:interpolator属性以资源引用的方式被应用到动画中，下表指定了Android提供的每个插值器和其资源文件引用的对应关系：</p>
+<p>Android中提供的所有的插值器都是 <code>Interpolator</code>类的子类，每一个插值器都可以通过<code>android:interpolator</code>属性以资源引用的方式被应用到动画中，下表指定了Android提供的每个插值器和其资源文件引用的对应关系：</p>
 <table>
 <thead>
 <tr>
@@ -290,52 +288,44 @@
 </tr>
 </tbody>
 </table>
-<h3 id="自定义插值器"><a href="#自定义插值器" class="headerlink" title="自定义插值器"></a>自定义插值器</h3><ul>
+<h2 id="2-自定义插值器"><a href="#2-自定义插值器" class="headerlink" title="2.自定义插值器"></a>2.自定义插值器</h2><ul>
 <li><strong>如果Android平台提供的插值器（列在上表）不能满足实际的需求，可以创建一个自定义插值器。例如，可以调整anticipateinterpolato的加速度，或调整CycleInterpolator的周期数。</strong></li>
 <li><strong>自定义插值器首先需要在XML文件中创建自己的插值器资源。</strong></li>
 <li><strong>文件位置</strong><br>res/anim/filename.xml<br>该文件名将作为资源ID</li>
 <li><strong>资源引用方式</strong><br>In XML: @[package:]anim/filename </li>
-<li><strong>语法</strong><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</div><div class="line">&lt;InterpolatorName xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;</div><div class="line">    android:attribute_name=&quot;value&quot;</div><div class="line">    /&gt;</div></pre></td></tr></table></figure>
+<li><p><strong>语法</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</div><div class="line">&lt;InterpolatorName xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;</div><div class="line">android:attribute_name=&quot;value&quot;</div><div class="line"> /&gt;</div></pre></td></tr></table></figure>
+<p>  如果你没有添加任何新属性，那么你的插值器将与Android平台提供的默认的插值器（在上面的表中已经列出）功能完全相同。</p>
 </li>
+<li><strong>标签</strong></li>
 </ul>
-<p>如果你没有添加任何新属性，那么你的插值器将与Android平台提供的默认的插值器（在上面的表中已经列出）功能完全相同。</p>
+<p><code>1.&lt;accelerateDecelerateInterpolator&gt;</code>开始和结束时变化率缓慢，但中间变化率快。</p>
+<p><code>2.&lt;accelerateInterpolator&gt;</code>开始变化率缓慢，然后加速。<br>   属性</p>
 <ul>
-<li><p><strong>标签</strong></p>
-<ul>
-<li><strong><acceleratedecelerateinterpolator></acceleratedecelerateinterpolator></strong>开始和结束时变化率缓慢，但中间变化率快。</li>
-<li><p><strong><accelerateinterpolator></accelerateinterpolator></strong>开始变化率缓慢，然后加速。<br><strong>属性</strong></p>
-<ul>
-<li>android:factor Float类型. 加速率 (默认是1).<ul>
-<li><strong><anticipateinterpolator></anticipateinterpolator></strong>开始的时候先向后一下然后再向前<br><strong>属性</strong></li>
+<li>android:factor Float类型. 加速率 (默认是1).</li>
 </ul>
-</li>
-<li>android:tension Float.  施加张力的量（默认是2）<ul>
-<li><strong><anticipateovershootinterpolator></anticipateovershootinterpolator></strong>开始向后然后向前，最后停在终值。<br><strong>属性</strong></li>
+<p><code>3.&lt;anticipateInterpolator&gt;</code>开始的时候先向后一下然后再向前<br>   属性</p>
+<ul>
+<li>android:tension Float.  施加张力的量（默认是2）</li>
+</ul>
+<p><code>4.&lt;anticipateOvershootInterpolator&gt;</code>开始向后然后向前，最后停在终值。<br>    属性</p>
+<ul>
 <li>android:tension Float.施加的张力量（默认是2）</li>
+<li>android:extraTension Float.施加的张力的倍数（默认是1.5）</li>
 </ul>
-</li>
-<li>android:extraTension Float.施加的张力的倍数（默认是1.5）<ul>
-<li><strong><bounceinterpolator></bounceinterpolator></strong> 动画最后会反弹。</li>
-</ul>
-</li>
-</ul>
+<p><code>5.&lt;bounceInterpolator&gt;</code> 动画最后会反弹。</p>
+<p><code>6.&lt;cycleInterpolator&gt;</code>以指定的循环次数重复动画。变化率服从正弦曲线。<br>   属性</p>
 <ul>
-<li><strong><cycleinterpolator></cycleinterpolator></strong>以指定的循环次数重复动画。变化率服从正弦曲线。<br><strong>属性</strong><ul>
 <li>android:cycles Integer. 循环数 (默认是1).</li>
 </ul>
-</li>
-<li><strong><decelerateinterpolator></decelerateinterpolator></strong>开始变化率快，然后减速。<br><strong>属性</strong><ul>
+<p><code>7.&lt;decelerateInterpolator&gt;</code>开始变化率快，然后减速。<br>   属性</p>
+<ul>
 <li>android:factor Float. 减速率 (默认是1).</li>
 </ul>
-</li>
-<li><strong><linearinterpolator></linearinterpolator></strong> 变化率是恒定的。</li>
-<li><strong><overshootinterpolator></overshootinterpolator></strong>向前一定位置再回来。<br><strong>属性</strong><ul>
-<li>android:tension Float. 施加的张力数（默认是2）</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
+<p><code>8.&lt;linearInterpolator&gt;</code> 变化率是恒定的。</p>
+<p><code>9.&lt;overshootInterpolator&gt;</code>向前一定位置再回来。<br>   属性</p>
+<ul>
+<li><p>android:tension Float. 施加的张力数（默认是2）</p>
 </li>
 <li><p><strong>举例</strong><br>XML 文件位置：res/anim/my_overshoot_interpolator.xml:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</div><div class="line">&lt;overshootInterpolator xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;</div><div class="line">    android:tension=&quot;7.0&quot;</div><div class="line">    /&gt;</div></pre></td></tr></table></figure>

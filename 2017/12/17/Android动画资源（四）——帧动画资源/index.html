@@ -15,17 +15,17 @@
     <meta name="keywords" content="SuperRed,superred,isuperred,Hexo主题,Android开发,Android,TV,Android TV" />
   
 
-  <meta name="description" content="Android动画资源系列文章：Android动画资源文件总结 帧动画 一种用XML定义的动画，按照顺序显示一系列图像（像放映电影一样）。 文件位置res/drawable/filename.xml 该文件名将作为资源ID 资源引用方式Java中引用方式: R.drawable.filenameXML中引用方式: @[package:]drawable.filename 语法1234567&amp;l">
+  <meta name="description" content="Android动画资源系列文章：Android动画资源文件总结 帧动画1.简介：一种用XML定义的动画，按照顺序显示一系列图像（像放映电影一样）。2.文件位置res/drawable/filename.xml 该文件名将作为资源ID 3.资源引用方式Java中引用方式: R.drawable.filenameXML中引用方式: @[package:]drawable.filename 4.语法">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android动画资源（四）——帧动画资源">
 <meta property="og:url" content="https://HandsomeSuperRed.github.io/2017/12/17/Android动画资源（四）——帧动画资源/index.html">
 <meta property="og:site_name" content="SuperRed">
-<meta property="og:description" content="Android动画资源系列文章：Android动画资源文件总结 帧动画 一种用XML定义的动画，按照顺序显示一系列图像（像放映电影一样）。 文件位置res/drawable/filename.xml 该文件名将作为资源ID 资源引用方式Java中引用方式: R.drawable.filenameXML中引用方式: @[package:]drawable.filename 语法1234567&amp;l">
+<meta property="og:description" content="Android动画资源系列文章：Android动画资源文件总结 帧动画1.简介：一种用XML定义的动画，按照顺序显示一系列图像（像放映电影一样）。2.文件位置res/drawable/filename.xml 该文件名将作为资源ID 3.资源引用方式Java中引用方式: R.drawable.filenameXML中引用方式: @[package:]drawable.filename 4.语法">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1893386-077e8518730079b3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2017-12-17T11:48:31.816Z">
+<meta property="og:updated_time" content="2017-12-17T12:32:32.396Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android动画资源（四）——帧动画资源">
-<meta name="twitter:description" content="Android动画资源系列文章：Android动画资源文件总结 帧动画 一种用XML定义的动画，按照顺序显示一系列图像（像放映电影一样）。 文件位置res/drawable/filename.xml 该文件名将作为资源ID 资源引用方式Java中引用方式: R.drawable.filenameXML中引用方式: @[package:]drawable.filename 语法1234567&amp;l">
+<meta name="twitter:description" content="Android动画资源系列文章：Android动画资源文件总结 帧动画1.简介：一种用XML定义的动画，按照顺序显示一系列图像（像放映电影一样）。2.文件位置res/drawable/filename.xml 该文件名将作为资源ID 3.资源引用方式Java中引用方式: R.drawable.filenameXML中引用方式: @[package:]drawable.filename 4.语法">
 <meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/1893386-077e8518730079b3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
   
@@ -185,7 +185,7 @@
 
   <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#帧动画"><span class="toc-text">帧动画</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#帧动画"><span class="toc-text">帧动画</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-简介：一种用XML定义的动画，按照顺序显示一系列图像（像放映电影一样）。"><span class="toc-text">1.简介：一种用XML定义的动画，按照顺序显示一系列图像（像放映电影一样）。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-文件位置"><span class="toc-text">2.文件位置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-资源引用方式"><span class="toc-text">3.资源引用方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-语法"><span class="toc-text">4.语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-元素"><span class="toc-text">5.元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-举例"><span class="toc-text">6.举例</span></a></li></ol></li></ol>
   </div>
 
 
@@ -233,34 +233,23 @@
 
   <div class="article-content">
     
-      <p><img src="http://upload-images.jianshu.io/upload_images/1893386-077e8518730079b3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Android animations.png"></p>
-<blockquote>
-<p>Android动画资源系列文章：<a href="http://www.jianshu.com/p/c57199a0fae6" target="_blank" rel="external">Android动画资源文件总结</a></p>
-<h2 id="帧动画"><a href="#帧动画" class="headerlink" title="帧动画"></a>帧动画</h2><ul>
-<li>一种用XML定义的动画，按照顺序显示一系列图像（像放映电影一样）。</li>
-<li><strong>文件位置</strong><br>res/drawable/filename.xml 该文件名将作为资源ID</li>
-<li><strong>资源引用方式</strong><br>Java中引用方式: R.drawable.filename<br>XML中引用方式: @[package:]drawable.filename</li>
-<li><strong>语法</strong><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</div><div class="line">&lt;animation-list xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;</div><div class="line">    android:oneshot=[&quot;true&quot; | &quot;false&quot;] &gt;</div><div class="line">    &lt;item</div><div class="line">        android:drawable=&quot;@[package:]drawable/drawable_resource_name&quot;</div><div class="line">        android:duration=&quot;integer&quot; /&gt;</div><div class="line">&lt;/animation-list&gt;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-</blockquote>
-<ul>
-<li><strong>元素</strong><ul>
-<li><strong><animation-list></animation-list></strong><br>必须有，根标签，包括一个或者多个<item>标签。<br><strong>属性</strong><ul>
+      <p><img src="http://upload-images.jianshu.io/upload_images/1893386-077e8518730079b3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Android animations.png"><br>Android动画资源系列文章：<a href="http://www.jianshu.com/p/c57199a0fae6" target="_blank" rel="external">Android动画资源文件总结</a></p>
+<h2 id="帧动画"><a href="#帧动画" class="headerlink" title="帧动画"></a>帧动画</h2><h3 id="1-简介：一种用XML定义的动画，按照顺序显示一系列图像（像放映电影一样）。"><a href="#1-简介：一种用XML定义的动画，按照顺序显示一系列图像（像放映电影一样）。" class="headerlink" title="1.简介：一种用XML定义的动画，按照顺序显示一系列图像（像放映电影一样）。"></a><strong>1.简介：</strong>一种用XML定义的动画，按照顺序显示一系列图像（像放映电影一样）。</h3><h3 id="2-文件位置"><a href="#2-文件位置" class="headerlink" title="2.文件位置"></a><strong>2.文件位置</strong></h3><p>res/drawable/filename.xml 该文件名将作为资源ID</p>
+<h3 id="3-资源引用方式"><a href="#3-资源引用方式" class="headerlink" title="3.资源引用方式"></a><strong>3.资源引用方式</strong></h3><p>Java中引用方式: R.drawable.filename<br>XML中引用方式: @[package:]drawable.filename</p>
+<h3 id="4-语法"><a href="#4-语法" class="headerlink" title="4.语法"></a><strong>4.语法</strong></h3>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</div><div class="line">&lt;animation-list xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;</div><div class="line">    android:oneshot=[&quot;true&quot; | &quot;false&quot;] &gt;</div><div class="line">    &lt;item</div><div class="line">        android:drawable=&quot;@[package:]drawable/drawable_resource_name&quot;</div><div class="line">        android:duration=&quot;integer&quot; /&gt;</div><div class="line">&lt;/animation-list&gt;</div></pre></td></tr></table></figure>
+<h3 id="5-元素"><a href="#5-元素" class="headerlink" title="5.元素"></a><strong>5.元素</strong></h3><ul>
+<li><code>&lt;animation-list&gt;</code><br>必须有，根标签，包括一个或者多个<item>标签。<br><strong>属性</strong><ul>
 <li>android:oneshot<br>Boolean。<br>oneshot为true，动画执行一次；oneshot为false，动画循环执行。</li>
 </ul>
 </item></li>
-<li><strong><item></item></strong><br>一帧动画，<animation-list>标签的子标签。<br><strong>属性</strong><ul>
+<li><code>&lt;item&gt;</code><br>一帧动画，<animation-list>标签的子标签。<br><strong>属性</strong><ul>
 <li>android:drawable drawable资源。</li>
 <li>android:duration Integer. 展示这一帧的时间，单位毫秒。</li>
 </ul>
 </animation-list></li>
 </ul>
-</li>
-<li><strong>举例</strong><br>文件位置：res/drawable/rocket.xml:<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</div><div class="line">&lt;animation-list xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;</div><div class="line">    android:oneshot=&quot;false&quot;&gt;</div><div class="line">    &lt;item android:drawable=&quot;@drawable/rocket_thrust1&quot; android:duration=&quot;200&quot; /&gt;</div><div class="line">    &lt;item android:drawable=&quot;@drawable/rocket_thrust2&quot; android:duration=&quot;200&quot; /&gt;</div><div class="line">    &lt;item android:drawable=&quot;@drawable/rocket_thrust3&quot; android:duration=&quot;200&quot; /&gt;</div><div class="line">&lt;/animation-list&gt;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>Java代码会将动画设置为视图的背景，然后播放动画：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">ImageView rocketImage = (ImageView) findViewById(R.id.rocket_image);</div><div class="line">rocketImage.setBackgroundResource(R.drawable.rocket_thrust);</div><div class="line"></div><div class="line">rocketAnimation = (AnimationDrawable) rocketImage.getBackground();</div><div class="line">rocketAnimation.start();</div></pre></td></tr></table></figure></p>
+<h3 id="6-举例"><a href="#6-举例" class="headerlink" title="6.举例"></a><strong>6.举例</strong></h3><p>文件位置：res/drawable/rocket.xml:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</div><div class="line">&lt;animation-list xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;</div><div class="line">    android:oneshot=&quot;false&quot;&gt;</div><div class="line">    &lt;item android:drawable=&quot;@drawable/rocket_thrust1&quot; android:duration=&quot;200&quot; /&gt;</div><div class="line">    &lt;item android:drawable=&quot;@drawable/rocket_thrust2&quot; android:duration=&quot;200&quot; /&gt;</div><div class="line">    &lt;item android:drawable=&quot;@drawable/rocket_thrust3&quot; android:duration=&quot;200&quot; /&gt;</div><div class="line">&lt;/animation-list&gt;</div></pre></td></tr></table></figure></p>
+<p>Java代码会将动画设置为视图的背景，然后播放动画：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">ImageView rocketImage = (ImageView) findViewById(R.id.rocket_image);</div><div class="line">rocketImage.setBackgroundResource(R.drawable.rocket_thrust);</div><div class="line">rocketAnimation = (AnimationDrawable) rocketImage.getBackground();</div><div class="line">rocketAnimation.start();</div></pre></td></tr></table></figure></p>
 
     
   </div>
